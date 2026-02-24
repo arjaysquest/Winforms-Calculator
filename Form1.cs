@@ -60,7 +60,14 @@ namespace Quisumbing_ShortExercise2
             if (resultJustDisplayed)
             {
                 currentExpression = lblDisplay.Text;
+                lblExpression.Text = currentExpression; // sync expression display
                 resultJustDisplayed = false;
+
+                // Directly append operator and return
+                currentExpression += op;
+                lblExpression.Text = currentExpression;
+                lblDisplay.Text = "0";
+                return;
             }
 
             if (currentExpression.Length > 0)
